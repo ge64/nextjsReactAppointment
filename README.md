@@ -21,10 +21,8 @@ This is a simple React app that allows users to schedule appointments. It makes 
 - React Icons
 - Tailwind CSS
 
-## Contributing
+## TODO
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
+- Sessions managed by generated passcodes for different groups
+- Add full calendar graphics for ease of use
+- Remove items on calendar that are more than a week old
