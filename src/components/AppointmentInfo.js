@@ -15,15 +15,15 @@ const AppointmentInfo = ({ appointment, onDeleteAppointment }) => {
       <div className="flex-grow">
         <div className="flex items-center">
           <span className="flex-none font-medium text-2xl text-blue-500">
-            {appointment.petName}
+            {appointment.boardGame}
           </span>
           <span className="flex-grow text-right">{appointment.aptDate}</span>
         </div>
         <div>
           <b className="font-bold text-blue-500">Owner:</b>{" "}
-          {appointment.ownerName}
+          {appointment.gameHost}
         </div>
-        <div className="leading-tight">{appointment.aptNotes}</div>
+        <div className="leading-tight">{appointment.gameNotes}</div>
       </div>
     </li>
   );

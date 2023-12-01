@@ -3,9 +3,9 @@ import { BiCalendarPlus } from "react-icons/bi";
 
 const AddAppointment = ({ onSendAppointment, lastId }) => {
   const clearData = {
-    petName: "",
-    ownerName: "",
-    aptNotes: "",
+    boardGame: "",
+    gameHost: "",
+    gameNotes: "",
     aptDate: "",
     aptTime: "",
   };
@@ -13,12 +13,12 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
   let [formData, setFormData] = useState(clearData);
 
   const formDataPosted = () => {
-    if (formData.petName && formData.ownerName && formData.aptDate) {
+    if (formData.boardGame && formData.gameHost && formData.aptDate) {
       const appointmentInfo = {
         id: lastId + 1,
-        petName: formData.petName,
-        ownerName: formData.ownerName,
-        aptNotes: formData.aptNotes,
+        boardGame: formData.boardGame,
+        gameHost: formData.gameHost,
+        gameNotes: formData.gameNotes,
         aptDate: formData.aptDate + " " + formData.aptTime,
       };
       onSendAppointment(appointmentInfo);
@@ -46,7 +46,7 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
         <div className="border-r-2 border-b-2 border-l-2 border-light-blue-500 rounded-b-md pl-4 pr-4 pb-4">
           <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start  sm:pt-5">
             <label
-              htmlFor="ownerName"
+              htmlFor="gameHost"
               className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
             >
               Owner Name
@@ -54,12 +54,12 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
             <div className="mt-1 sm:mt-0 sm:col-span-2">
               <input
                 onChange={(event) => {
-                  setFormData({ ...formData, ownerName: event.target.value });
+                  setFormData({ ...formData, gameHost: event.target.value });
                 }}
                 type="text"
-                name="ownerName"
-                id="ownerName"
-                value={formData.ownerName}
+                name="gameHost"
+                id="gameHost"
+                value={formData.gameHost}
                 required
                 className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
               />
@@ -68,7 +68,7 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
 
           <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start  sm:pt-5">
             <label
-              htmlFor="petName"
+              htmlFor="boardGame"
               className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
             >
               Pet Name
@@ -76,13 +76,13 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
             <div className="mt-1 sm:mt-0 sm:col-span-2">
               <input
                 onChange={(event) => {
-                  setFormData({ ...formData, petName: event.target.value });
+                  setFormData({ ...formData, boardGame: event.target.value });
                 }}
                 required
                 type="text"
-                name="petName"
-                id="petName"
-                value={formData.petName}
+                name="boardGame"
+                id="boardGame"
+                value={formData.boardGame}
                 className="max-w-lg block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm border-gray-300 rounded-md"
               />
             </div>
@@ -133,7 +133,7 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
 
           <div className="sm:grid sm:grid-cols-3 sm:gap-4 sm:items-start  sm:pt-5">
             <label
-              htmlFor="aptNotes"
+              htmlFor="gameNotes"
               className="block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2"
             >
               Appointment Notes
@@ -141,11 +141,11 @@ const AddAppointment = ({ onSendAppointment, lastId }) => {
             <div className="mt-1 sm:mt-0 sm:col-span-2">
               <textarea
                 onChange={(event) => {
-                  setFormData({ ...formData, aptNotes: event.target.value });
+                  setFormData({ ...formData, gameNotes: event.target.value });
                 }}
-                value={formData.aptNotes}
-                id="aptNotes"
-                name="aptNotes"
+                value={formData.gameNotes}
+                id="gameNotes"
+                name="gameNotes"
                 rows="3"
                 className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
                 placeholder="Detailed comments about the condition"

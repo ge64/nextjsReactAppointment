@@ -21,18 +21,18 @@ const DropDown = ({
           aria-labelledby="options-menu"
         >
           <div
-            onClick={() => onSortByChange("petName")}
+            onClick={() => onSortByChange("boardGame")}
             className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
             role="menuitem"
           >
-            Pet Name {sortBy === "petName" ? <BiCheck /> : null}
+            Pet Name {sortBy === "boardGame" ? <BiCheck /> : null}
           </div>
           <div
-            onClick={() => onSortByChange("ownerName")}
+            onClick={() => onSortByChange("gameHost")}
             className="px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900 flex justify-between cursor-pointer"
             role="menuitem"
           >
-            Owner Name {sortBy === "ownerName" ? <BiCheck /> : null}
+            Owner Name {sortBy === "gameHost" ? <BiCheck /> : null}
           </div>
           <div
             onClick={() => onSortByChange("aptDate")}

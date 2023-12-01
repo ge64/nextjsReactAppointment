@@ -7,15 +7,15 @@ import Search from "./components/Search";
 function App() {
   let [appointmentList, setAppointmentList] = useState([]);
   let [query, setQuery] = useState("");
-  let [sortBy, setSortBy] = useState("petName");
+  let [sortBy, setSortBy] = useState("boardGame");
   let [orderBy, setOrderBy] = useState("asc");
 
   const filteredAppointment = appointmentList
     .filter((item) => {
       return (
-        item.petName.toLowerCase().includes(query.toLowerCase()) ||
-        item.ownerName.toLowerCase().includes(query.toLowerCase()) ||
-        item.aptNotes.toLowerCase().includes(query.toLowerCase())
+        item.boardGame.toLowerCase().includes(query.toLowerCase()) ||
+        item.gameHost.toLowerCase().includes(query.toLowerCase()) ||
+        item.gameNotes.toLowerCase().includes(query.toLowerCase())
       );
     })
     .sort((a, b) => {
